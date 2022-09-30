@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioAppWeb } from './Resources/InicioSesion/InicioSesion.html';
+//import { InicioAppWeb } from './Resources/static/InicioSesion';
 
 const routes: Routes = [
-{path:"", component:}
+//{path:"", component:}
 
 
 ];
