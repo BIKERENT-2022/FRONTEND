@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!--Google Fonts a-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Google Fonts b-->
+    <!---Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!---FontAwesome-->
+    <script src="https://kit.fontawesome.com/7cfe24ec32.js" crossorigin="anonymous"></script>    
+    <script src="../js/bootstrap.bundle.js"></script>
+    <title>Finalizar Alquiler</title>
+</head>
+<body>
+    <div class="container align-items-center">
+        <div class="row"> <!--flecha back-->
+            <div class="col">
+                <button class="button-back-carrito"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10 contenedor-carrito">
+                <div class="row">
+                    <p class="title-carrito">Tu pedido</p>
+                </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8 product-box">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="img-minibmx img-minibmx-carrito"></div>
+                            </div>
+                            <div class="col-6">
+                                <p class="txt-mini-bmx">Mini BMX</p>
+                            </div>
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <button class="button-mp">-</button>
+                                        <p class="txt-number"> 1 </p>
+                                        <button class="button-mp">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row actualizar-box-fin-a" style="margin-top: 80px;">
+                    <p class="text-total">Total del carrito</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="text-envio">Envío:</p>
+                    </div>
+                    <div class="col-6"> <!--Checks-->
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexCheck1" checked>
+                                <label class="form-check-label" for="flexCheck1">Envío estándar (hasta 1 hora) PLAN BASIC</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexCheck2">
+                                <label class="form-check-label" for="flexCheck2">Envío express (hasta 30 minutos) PLAN PREMIUM</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div class="button-center">
+                        <button type="button" class="btn btn-outline-info mx-auto col-2" data-bs-toggle="modal" data-bs-target="#notVerPedido">Solicitar Alquiler</button>
+                    </div>
+                
+                    <!-- Modal -->
+                    <div class="modal fade" id="notVerPedido" tabindex="-1" aria-labelledby="notVerPedidoLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                            <h5 class="modal-title " id="notVerPedidoLabel">Alquiler realizado con éxito.<br>Nos estaremos comunicando lo más pronto posible</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/BIKERENT.png" class="img-fluid img-thumbnail" alt="Mensaje">
+                            </div>
+                            <div class="modal-footer">
+                            <a href="VerPedido.html"> <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Ver pedido</button> </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</body>
