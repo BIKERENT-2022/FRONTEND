@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel = "stylesheet" href="../css/EstilosInicioSesion.css"/>    
+    <script src = "../js/Login.js"></script>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src = "../img/Bikerent_logo.PNG">
+    </div>
+
+    <div class="titulo">
+        <h1>Iniciar sesión</h1>
+    </div>
+
+    <form class = "cardlogin" onsubmit = "ValidarCampos(); return false">
+        <div class="cajas">
+            <div class="a">
+                <div class="mb-4">
+                    <label for="formGroupExampleInput" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="NameUser" placeholder="nombre@ejemplo.com">
+                </div>
+            </div>
+
+            <div class="a">
+                <div class="mb-4">
+                    <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="pwd" placeholder=" · · · · · · · · · ·">
+                </div>
+            </div>
+        </div>
+        <div id="msg"> 
+            <!-- Mensajes de Verificación -->
+            <div id="campos_vacios" class="alert alert-warning ocultar" role="alert">
+                Los campos están vacíos !!
+            </div>        
+            <!-- Fin Mensajes de Verificación -->
+        </div>
+        <div class="boton" >
+        <a href="HOME.html"><button type="submit" class="btn btn-outline-info">Iniciar Sesión</button> </a> 
+        </div>
+    </form>
+
+    <pp>O utiliza tu perfil de alguna red social</pp>
+
+    <div class="tipo">
+       <a href="https://www.gmail.com/"> <button type="button" class="btn btn-outline-info" style="margin-right: 25px">Gmail</button></a>
+       <a href="https://www.facebook.com/"> <button type="button" class="btn btn-outline-info" style="margin-left: 25px">Facebook</button></a>
+    </div>
+
+
+    <p class="text-muted">
+        <a href="cambiarcontraseña.html" class="text-reset" style="margin-right: 25px" >¿Olvidaste tu contraseña?</a>
+        <a href="Registro.html" class="text-reset"style="font-weight: bold; margin-left: 25px">Registrate</a>
+    </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
