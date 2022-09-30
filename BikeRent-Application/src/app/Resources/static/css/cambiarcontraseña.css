@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+:root {
+    --Lightgray: #C4C4C4;
+    --White: white;
+    --Darkgray: #8B8B8B;
+    --Black: black;
+    --Blue: #00B2FF;
+    --Cyan: #00D0D0;
+    --DarkBlue: #052473;
+    --gradient: linear-gradient(90deg, var(-Blue), var(-Cyan));
+}
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: initial;
+}
+input {
+    border: 1.5px solid var(--Cyan) !important;
+    border-radius: 0.1rem;
+    color: var(--Cyan);	
+}
+.cardprofile{
+	background: solid var(--White);
+	border: 1px solid var(--Black);
+	position: absolute;
+	width: 800px;
+	height: 560px;
+    top: 50%;
+    left: 50%;           
+    margin-top: -250px;
+    margin-left: -400px;          
+}
+.datos {
+	margin-left: 300px;
+	margin-top:115px;
+	width:200px;	
+}
+button{
+	justify-content: center;
+    padding-left: 10%;
+}
+p {
+    font-weight: bold;
+}
+.alert{
+    height: 50px;
+    width:185px;
+    font-size: 11px;
+    text-align: justify;
+}
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;  
+}
