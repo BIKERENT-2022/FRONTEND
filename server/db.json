@@ -1,0 +1,11 @@
+{
+  "Cliente": [
+    {
+      "id": 1,
+      "Cuenta": "Cliente",
+      "NombreUsuario": "diego",
+      "CorreoElectronico": "diego@hotmail.com",
+      "contrasenia": "diego"
+    }
+  ]
+}
