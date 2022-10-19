@@ -1,1 +1,41 @@
-<p>perfil-empresas works!</p>
+<app-navbar-empresa></app-navbar-empresa>
+
+<div id = "MyProfile " >
+    <div><h1 class="TitleProfile" > Mi Perfil </h1></div>
+    <div class = "cardprofile border border-dark">
+        <div class ="datos ">
+                <img src ="../../../assets/imgs/usuario_cliente.jpg" class = "imgperfil" alt = "imgperfil">
+                <p>Modificar foto</p>                
+            <a> Correo electrónico:</a><br>
+                <input class="border border-info" type="email" name = "email" id = "email" placeholder="alevalera@gmail.com">
+            
+            <br><br>
+            <a> Direcciones:</a><br>
+                <input class="border border-info" type="text" name = "text" id = "direction" placeholder="Av. la Marina 2810">  
+                <i onclick = DeleteInput(1) class="bi bi-x-square"></i> <i class="bi bi-pencil-square"></i>
+            <br><br>
+            <a> Tarjeta:</a><br>
+                <input class="border border-info" type="text" name = "number" id = "creditcard" placeholder="123456789"> <i onclick = DeleteInput(2) class="bi bi-x-square"></i> <i class="bi bi-pencil-square"></i><br><br>
+            <a routerLink="/cambiarContrasenia"> <p> Cambiar contraseña</p></a>
+            <a> <p> Eliminar cuenta </p> </a>
+            <a routerLink="/login"> <p> Cerrar sesión </p> </a>
+        </div>
+
+        <div class = "datos">
+            <a> Nombre completo:</a><br>
+                <input class="border border-info" type="text" name = "text" id = "fullname" placeholder="Alexandra Valera"><br><br>
+            <a> DNI: </a><br>
+                <input class="border border-info" type="text" name = "number" id = "DNI" placeholder="78907658"><br><br>
+            <a> Contraseña:</a><br>
+                <input class="border border-info" type="password" name = "password" id = "password" placeholder="*******"><br><br>
+            <a> Número de telefono:</a><br>
+                <input class="border border-info" type="tel" name = "tel" id = "phone" placeholder = "952784961"> <i onclick = DeleteInput(3) class="bi bi-x-square"></i> 
+                <i class="bi bi-pencil-square"></i><br><br>
+            <a> Tipo de Plan:</a><br>
+                <input class="border border-info" type="text" name = "number" id = "plan" placeholder = "Plan Basic"> 
+                <a href ="BasicActivo.html"><i class="bi bi-pencil-square"></i> </a> <br><br>
+            <button type="button" class="btn btn-info"  style="color:white"> Perfil privado</button> 
+            <button type="button" class="btn btn-outline-info"> Perfil público</button>
+        </div>
+    </div>		  
+</div>

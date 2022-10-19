@@ -7,22 +7,24 @@
             <h1>Iniciar sesión</h1>
         </div>
 
-        <form class = "cardlogin" onsubmit = "ValidarCampos(); return false">
-            <div class="cajas">
+        <form  class = "cardlogin" onsubmit = "ValidarCampos(); return false">
+
+            <div [formGroup]="loginForm" (ngSubmit)="login()"class="cajas">
                 <div class="a">
                     <div class="mb-4">
                         <label for="formGroupExampleInput" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="NameUser" placeholder="  nombre@ejemplo.com">
+                        <input formControlName="CorreoElectronico" type="email" class="form-control" id="NameUser" placeholder="  nombre@ejemplo.com">
                     </div>
                 </div>
 
                 <div class="a">
                     <div class="mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="  · · · · · · · · · ·">
+                        <input formControlName="contrasenia" type="password" class="form-control" id="pwd" placeholder="  · · · · · · · · · ·">
                     </div>
                 </div>
             </div>
+
             <div id="msg"> 
                 <!-- Mensajes de Verificación -->
                 <div id="campos_vacios" class="alert alert-warning ocultar" role="alert">
@@ -31,20 +33,21 @@
                 <!-- Fin Mensajes de Verificación -->
             </div>
             <div class="boton" >
-            <a href="#"><button type="submit" class="btn btn-outline-info">Iniciar Sesión</button></a> 
+                <button type="submit" class="btn btn-outline-info" routerLink="/home" >Iniciar Sesión</button>
             </div>
+
         </form>
 
         <p>O utiliza tu perfil de alguna red social</p>
 
         <div class="tipo">
-        <a href="#"> <button type="button" class="btn btn-outline-info" style="margin-right: 25px">Gmail</button></a>
-        <a href="#"> <button type="button" class="btn btn-outline-info" style="margin-left: 25px">Facebook</button></a>
+            <button type="button" class="btn btn-outline-info" >Gmail</button>
+            <button type="button" class="btn btn-outline-info">Facebook</button>
         </div>
 
 
         <p class="text-muted">
-            <a href="#" class="text-reset" style="margin-right: 25px" >¿Olvidaste tu contraseña?</a>
-            <a href="#" class="text-reset"style="font-weight: bold; margin-left: 25px" routerLink="/Registrate">Registrate</a>
+            <a class="text-reset" style="margin-right: 25px" routerLink="/cambiarContrasenia">¿Olvidaste tu contraseña?</a>
+            <a class="text-reset" style="margin-left: 25px" routerLink="/Registrate">Registrate</a>
         </p>
 </div>

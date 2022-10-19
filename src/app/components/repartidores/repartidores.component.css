@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.titulo h1{
+    font-weight: bold;
+    color:#00D0D0;
+}
+
+.B{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+
+.a{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    margin-left: 8PX;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.cajaGris{
+    width: 35%;
+    height: 40px;
+    background-color: grey;
+}
+.cajaTransparente{
+    border: solid grey;
+    width: 35%;
+}
