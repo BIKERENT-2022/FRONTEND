@@ -10,20 +10,21 @@
 
         <p style="text-align: center">BIKERENT, tu mejor opción de transporte</p>
 
-        <form [formGroup]="myForm" (ngSubmit)="verificarPasswords()" novalidate>
+        <form [formGroup]="myForm" class="example-form"> <!--(ngSubmit)="verificarPasswords()" novalidate>-->
 
                 <div class="a">
                     <div class="form-floating mb-4">
-                        <input  formControlName = "NombreUsuario" type="text" class="form-control" id="NombreUsuario" placeholder="Nombre Completo">
-                        <label for="floatingInput">Nombre de Usuario</label>
-                        <div *ngIf="myForm.get('NombreUsuario')?.errors && myForm.get('NombreUsuario')?.touched">
-                            <p class = "not_error" *ngIf="myForm.get('NombreUsuario')?.hasError('required')"> Este campo es obligatorio</p>
-                            <p class = "not_error" *ngIf="myForm.get('NombreUsuario')?.hasError('minlength')"> Minimo de 5 caracteres</p>
-                            <p class = "not_error" *ngIf="myForm.get('NombreUsuario')?.hasError('pattern')"> No se permiten caracteres especiales </p>
+                        <input  formControlName = "usuario" type="text" class="form-control" id="floatingInput" placeholder="Usuario">
+                        <label for="floatingInput">Usuario</label>
+                        <div *ngIf="myForm.get('usuario')?.errors && myForm.get('usuario')?.touched">
+                            <p class = "not_error" *ngIf="myForm.get('usuario')?.hasError('required')"> Este campo es obligatorio</p>
+                            <p class = "not_error" *ngIf="myForm.get('usuario')?.hasError('minlength')"> Minimo de 5 caracteres</p>
+                            <p class = "not_error" *ngIf="myForm.get('usuario')?.hasError('pattern')"> No se permiten caracteres especiales </p>
                         </div>
                     </div>
                 </div>
         
+                <!--
                 <div class="a">
                     <div class="form-floating mb-4">
                         <input formControlName = "email" type="email" class="form-control" id="email" placeholder="Correo Electrónico">
@@ -33,11 +34,11 @@
                             <p class = "not_error" *ngIf="myForm.get('email')?.hasError('email')"> No cumple con el formato valido </p>
                         </div>
                     </div>
-                </div>
+                </div>-->
         
                 <div class="a">
                     <div class="form-floating mb-4">
-                        <input formControlName = "contrasenia" type="password" class="form-control" id="contrasenia" placeholder="Password">
+                        <input formControlName = "contrasenia" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
                         <label for="floatingPassword">Contraseña</label>
                         <div *ngIf="myForm.get('contrasenia')?.errors && myForm.get('contrasenia')?.touched">
                             <p class = "not_error" *ngIf="myForm.get('contrasenia')?.hasError('required')"> Este campo es obligatorio</p>
@@ -48,25 +49,29 @@
         
                 <div class="a">
                     <div class="form-floating mb-4">
-                        <input formControlName = "confcont" type="password" class="form-control" id="confcont" placeholder="Password">
+                        <input formControlName = "confcontrasenia" type="password" class="form-control" id="floatingPassword" placeholder="Confirmar contraseña">
                         <label for="floatingPassword">Confirmar contraseña</label>
-                        <div *ngIf="myForm.get('confcont')?.errors && myForm.get('confcont')?.touched">
-                            <p class = "not_error" *ngIf="myForm.get('confcont')?.hasError('required')"> Este campo es obligatorio</p>
-                            <p class = "not_error" *ngIf="myForm.get('confcont')?.hasError('minlength')"> Minimo de 8 caracteres</p>
+                        <div *ngIf="myForm.get('confcontrasenia')?.errors && myForm.get('confcontrasenia')?.touched">
+                            <p class = "not_error" *ngIf="myForm.get('confcontrasenia')?.hasError('required')"> Este campo es obligatorio</p>
+                            <p class = "not_error" *ngIf="myForm.get('confcontrasenia')?.hasError('minlength')"> Minimo de 8 caracteres</p>
                         </div>
                     </div>
                 </div>    
         
-            <div class="tipo">
-                <p class="t">Tipos de cuenta</p>
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked value="Cliente"  formControlName = "Cuenta">
-                    <label class="btn btn-outline-primary" for="btnradio2" >Cliente</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"  value="Empresa" formControlName = "Cuenta">
-                    <label class="btn btn-outline-primary" for="btnradio1" >Empresa</label> 
+                <div class="tipo">
+                    <p class="t">Tipos de cuenta</p>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="background-color: white">
+        
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="Empresa" formControlName = "tipo_usuario">
+                        <label class="btn btn-outline-primary" for="btnradio1" >Empresa</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked value="Cliente" formControlName = "tipo_usuario">
+                        <label class="btn btn-outline-primary" for="btnradio2" >Cliente</label>
+        
+                    </div>
                 </div>
-            </div>
+
+
             <div id="msg"> 
                 <!-- Mensajes de Verificación -->
                 <div id="campos_vacios" class="alert alert-warning ocultar" role="alert">
@@ -81,7 +86,10 @@
                 <!-- Fin Mensajes de Verificación -->
             </div>
             
-            <button type="submit" id = "register" class="btn btn-outline-info" >REGISTRAR</button>   
+            <div class="boton" >
+                <button type="button"(click)="saveUsuario()" class="btn btn-outline-info" >REGISTRAR</button>
+             </div>  
+
         </form>
     </div>
 </body>

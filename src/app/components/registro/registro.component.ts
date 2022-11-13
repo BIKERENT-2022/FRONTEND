@@ -1,5 +1,5 @@
-import { Cliente } from './../../models/Cliente';
-import { ClienteService } from './../../services/cliente.service';
+import { UsuarioService } from './../../services/usuario.service';
+import { Usuario } from './../../models/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,63 +12,66 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class RegistroComponent implements OnInit {
 
-  myForm!:FormGroup;
+  myForm!:FormGroup
 
   constructor(private fb: FormBuilder,
-    private clienteService: ClienteService,
+    private usuarioService: UsuarioService,
     private snackBar: MatSnackBar,
-    private router: Router,
-  ) 
-    
-  {this.reactiveForm();}
+    private router: Router,) {this.reactiveForm();}
 
   ngOnInit(): void {
-    console.log(this.myForm.value);
   }
 
   reactiveForm(){
     this.myForm= this.fb.group({
       id:[''],
-      Cuenta: ['',[Validators.required]],
-      NombreUsuario: ['',[Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/) , Validators.minLength(5)]],
-      email:['',[Validators.required, Validators.email]],
+      tipo_usuario: ['',[Validators.required]],
+      usuario: ['',[Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/) , Validators.minLength(5)]],
       contrasenia:['',[Validators.required, Validators.minLength(8)]],
-      confcont:['',[Validators.required, Validators.minLength(8)]],
+      confcontrasenia:['',[Validators.required, Validators.minLength(8)]],
     })
   }
 
-  saveCliente()
-  {
-    const listaClientes: Cliente = 
-    {
-      id : 0,
-      Cuenta : this.myForm.get('Cuenta')!.value,
-      NombreUsuario : this.myForm.get('NombreUsuario')!.value,
-      CorreoElectronico : this.myForm.get('email')!.value,
-      contrasenia : this.myForm.get('contrasenia')!.value
-    }
-/*
-  this.clienteService.addCliente(listaClientes).subscribe({
-  next:(data)=>{
-    this.verificarPasswords();
-      if(this.verificarPasswords() != true) 
-      {
-        this.snackBar.open('se encontró un error en el registro, por favor corregir', '',{duration: 3000});
-      }
-      else 
-      {
+  saveUsuario(){
 
-        this.snackBar.open('registrado correctamente', '',{duration: 2000});
-        if(this.myForm.get('Cuenta')!.value=='Cliente'){this.router.navigate(['/Condicionesbasic'])}
-        else if (this.myForm.get('Cuenta')!.value=='Empresa') {this.router.navigate(['/condicionesEmpresa'])}
-      }   
-      },
-      error: (err)=>{console.log(err)}
-    })
+    const contrasenia: String = this.myForm.get('contrasenia')!.value;
+    const confcontrasenia: String = this.myForm.get('confcontrasenia')!.value;
+
+    if(contrasenia == confcontrasenia){
+
+      const listaUsuarios: Usuario={
+        id : 0,
+        tipo_usuario : this.myForm.get('tipo_usuario')!.value,
+        usuario : this.myForm.get('usuario')!.value,
+        contrasenia : this.myForm.get('contrasenia')!.value
+      }
+  
+      this.usuarioService.addUsuario(listaUsuarios).subscribe({
+        next:(data)=>{
+          this.snackBar.open('registrado correctamente', '',{duration: 2000});
+          if(this.myForm.get('tipo_usuario')!.value=='Cliente'){this.router.navigate(['/Condicionesbasic'])}
+          else if (this.myForm.get('tipo_usuario')!.value=='Empresa') {this.router.navigate(['/condicionesEmpresa'])} 
+        },
+        error: (err)=>{console.log(err)}
+      })
+  
+    }
     
-  */
+    else{
+      this.snackBar.open('Las contraseñas ingresadas no coinciden', '',{
+        duration: 5000,
+      });
+    }
+
   }
   
+
+
+
+
+
+
+  /*
   ValidarCampos()
   {
       //Obtendremos los valores de los inputs
@@ -145,4 +148,6 @@ export class RegistroComponent implements OnInit {
         register.disabled = false;
     }
   }
+  */
+
 }

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Cliente } from './../models/Cliente';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -7,14 +8,16 @@ import { Injectable } from '@angular/core';
 })
 export class ClienteService {
 
-  basePath: string="http://localhost:52171/Cliente"
+  basePath: string = environment.serverJson; 
 
   constructor(private http: HttpClient) { }
 
-  addCliente(listaClientes: Cliente){
-    return this.http.post<Cliente>(this.basePath, listaClientes);
+  getCliente(){
+    return this.http.get<Cliente[]>(`${this.basePath}/api/clientes`);
   }
 
-
-  getlist(){return this.http.get<Cliente[]>(this.basePath);}
+  /*
+  addCliente(listaClientes: Cliente){
+    return this.http.post<Cliente>(this.basePath, listaClientes);
+  }*/
 }

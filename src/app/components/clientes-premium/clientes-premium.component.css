@@ -1,44 +1,33 @@
-.clientes-premium {
-    position: absolute;
-    top: 50%;
-    left: 50%;       
-    margin-top: -300px;
-    margin-left: -450px; 
-}
 .title {    
     font-size: 30px;
     font-weight:bold;
-    margin: 20px;
+    margin-top: 1%;
 }
-.sub-title {
-    font-size: 24px;
-    font-weight:bold;
-    color: #00D0D0;
-    
-    margin: 20px;
+
+.a{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+
 }
-.afiliados {
-    width: 900px;
-    height: 200px;
-    max-height: 200px;
-    overflow-y: scroll;
+.cajagris{
+    margin-top: 3%;
+    width: 90%;
+    padding: 2%;
+    height: auto;
+    background-color: grey;
 }
-.row {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: 70px;
+
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
 }
-.bg-color
-{
-    background-color: #C4C4C4;;
+table {
+    width: 100%;
+    margin: auto;
 }
-h6 {
-    font-weight: bold;
-    font-size: 18px;
-}
-i{
-    font-size: 50px;
-    color:black;
+.mat-paginator{
+    width: 100%;
+    margin: auto;
 }

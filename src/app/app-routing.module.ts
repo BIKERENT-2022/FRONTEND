@@ -1,3 +1,5 @@
+import { RepartidoresEditarComponent } from './components/repartidores-editar/repartidores-editar.component';
+import { RepartidoresAgregarComponent } from './components/repartidores-agregar/repartidores-agregar.component';
 import { RepartidoresComponent } from './components/repartidores/repartidores.component';
 import { PerfilEmpresasComponent } from './components/perfil-empresas/perfil-empresas.component';
 import { HistorialAlqEmpresasComponent } from './components/historial-alq-empresas/historial-alq-empresas.component';
@@ -77,7 +79,9 @@ const routes: Routes = [
   {path:"repartidores",component:RepartidoresComponent},
   {path:"alquilerRealizado",component:AlquilerRealizadoComponent},
   {path: "solicitud-tarjeta",component:SolicitudTarjetaComponent},
-  {path: "plan-basic", component:PlanBasicComponent},
+  {path: "planBasic", component:PlanBasicComponent},
+  {path: "nuevo-repartidor", component:RepartidoresAgregarComponent},
+  {path: "editarRepartidor/:id", component:RepartidoresEditarComponent},
   {path:"",component:LoginComponent},
 
 ];

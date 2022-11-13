@@ -32,16 +32,18 @@ export class CambiarContrasenaComponent implements OnInit {
     })
   }
   
+  /*
   UpdatePassword()
   {
     const listaClientes: Cliente={
+      
       id : 0,
       Cuenta : this.myForm.get('Cuenta')!.value,
       NombreUsuario : this.myForm.get('NombreUsuario')!.value,
       CorreoElectronico : this.myForm.get('email')!.value,
       contrasenia : this.myForm.get('conpwd')!.value
     }
-  }
+  }*/
   
   ValidarCampos()
   {

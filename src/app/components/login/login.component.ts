@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
         return a.NombreUsuario === this.loginForm.value.NombreUsuario && a.CorreoElectronico === this.loginForm.value.CorreoElectronico
       })
     })
-
   }
 
 }

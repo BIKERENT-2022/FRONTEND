@@ -6,6 +6,55 @@
       "NombreUsuario": "diego",
       "CorreoElectronico": "diego@hotmail.com",
       "contrasenia": "diego"
+    },
+    {
+      "id": 2,
+      "Cuenta": "Empresa",
+      "NombreUsuario": "diegooo",
+      "CorreoElectronico": "dieghko@hotmail.com",
+      "contrasenia": "diegruno"
+    }
+  ],
+  "Repartidores": [
+    {
+      "id": 1,
+      "Nombres": "Diego Alberto",
+      "Apellidos": "Casaverde Centeno",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "alberto@hotmail.com"
+    },
+    {
+      "id": 2,
+      "Nombres": "Deisy",
+      "Apellidos": "Deisy",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "Deisy@hotmail.com"
+    },
+    {
+      "id": 3,
+      "Nombres": "Saul",
+      "Apellidos": "Saul",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "Saul@hotmail.com"
+    },
+    {
+      "id": 4,
+      "Nombres": "Jose",
+      "Apellidos": "Jose",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "Jose@hotmail.com"
+    },
+    {
+      "id": 5,
+      "Nombres": "zzz",
+      "Apellidos": "aaa",
+      "DNI": "71295039",
+      "Celular": "987654321",
+      "CorreoElectronico": "a@hotmail.com"
     }
   ]
 }

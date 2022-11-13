@@ -51,6 +51,9 @@ import { PagoPlanComponent } from './components/pago-plan/pago-plan.component';
 import { NavbarEmpresaComponent } from './components/navbar-empresa/navbar-empresa.component';
 import { HomeEmpresaComponent } from './components/home-empresa/home-empresa.component';
 import { RepartidoresComponent } from './components/repartidores/repartidores.component';
+import { RepartidoresAgregarComponent } from './components/repartidores-agregar/repartidores-agregar.component';
+import { RepartidoresEditarComponent } from './components/repartidores-editar/repartidores-editar.component';
+
 
 @NgModule({
   declarations: [
@@ -101,6 +104,8 @@ import { RepartidoresComponent } from './components/repartidores/repartidores.co
     NavbarEmpresaComponent,
     HomeEmpresaComponent,
     RepartidoresComponent,
+    RepartidoresAgregarComponent,
+    RepartidoresEditarComponent
   ],
   imports: [
     BrowserModule,
