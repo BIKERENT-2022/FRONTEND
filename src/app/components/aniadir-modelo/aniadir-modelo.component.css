@@ -193,7 +193,7 @@
 }
 
 .text-detalles {
-    margin: 0 0;
+    margin: 55px 0;
     padding: 0 0;
 }
 
@@ -213,4 +213,14 @@
     height: 300px;  
     width:100%;
     margin-bottom: 75px;
+}
+
+input::placeholder {
+    color: grey;
+}
+
+button[disabled] {
+    border: 1px solid grey;
+    background-color: black;
+    -webkit-text-fill-color: black;
 }

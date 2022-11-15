@@ -257,6 +257,16 @@
 }
 
 .text-detalles {
-    margin: 0 0;
+    margin: 55px 0;
     padding: 0 0;
+}
+
+input::placeholder {
+    color: grey;
+}
+
+button[disabled] {
+    border: 1px solid grey;
+    background-color: black;
+    -webkit-text-fill-color: black;
 }
