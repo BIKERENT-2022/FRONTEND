@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.titulo h1{
+    font-weight: bold;
+    color:#00D0D0;
+    font-size: 50px;
+}
+
+
+.cuadro{
+    width: 100%;
+    text-align: right;
+}
+
+
+p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.a{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+.cajagris{
+    padding: 2%;
+    width: 90%;
+    height: auto;
+    background-color: grey;
+}
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+table {
+    width: 100%;
+    margin: auto;
+}
+
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+}

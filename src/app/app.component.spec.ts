@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'BikeRent-Application'`, () => {
+  it(`should have as title 'BikeRent-Web-Application'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('BikeRent-Application');
+    expect(app.title).toEqual('BikeRent-Web-Application');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('BikeRent-Application app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('BikeRent-Web-Application app is running!');
   });
 });
