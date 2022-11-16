@@ -31,3 +31,36 @@ table {
     width: 100%;
     margin: auto;
 }
+.title {    
+    font-size: 30px;
+    font-weight:bold;
+    margin-top: 1%;
+}
+
+.a{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+
+}
+.cajagris{
+    margin-top: 3%;
+    width: 90%;
+    padding: 2%;
+    height: auto;
+    background-color: grey;
+}
+
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+table {
+    width: 100%;
+    margin: auto;
+}
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+}
