@@ -1,3 +1,4 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Bicicleta } from 'src/app/models/Bicicleta';
@@ -13,6 +14,8 @@ export class BicicletasComponent implements OnInit {
   bicicleta: Bicicleta[] = [];
   dataSource = new MatTableDataSource<Bicicleta>();
   displayColumns: string[] = ["img"];
+  public MyForm!: FormGroup
+
 
   constructor(private bicicletaService:BicicletaService) { }
 
@@ -28,4 +31,8 @@ export class BicicletasComponent implements OnInit {
     );
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

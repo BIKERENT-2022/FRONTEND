@@ -16,5 +16,8 @@ export class UsuarioService {
     return this.http.post<Usuario>(`${this.resourcePath}/api/usuarios`, listaUsuarios);
   }
 
+  getUsuarios(){
+    return this.http.get<Usuario[]>(`${this.resourcePath}/api/usuarios`);
+  }
   //getlistUsuario(){return this.http.get<Usuario[]>(this.resourcePath);}
 }
