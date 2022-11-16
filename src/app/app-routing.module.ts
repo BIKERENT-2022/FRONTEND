@@ -1,3 +1,5 @@
+import { RepartidoresEditarComponent } from './components/repartidores-editar/repartidores-editar.component';
+import { RepartidoresAgregarComponent } from './components/repartidores-agregar/repartidores-agregar.component';
 import { RepartidoresComponent } from './components/repartidores/repartidores.component';
 import { PerfilEmpresasComponent } from './components/perfil-empresas/perfil-empresas.component';
 import { HistorialAlqEmpresasComponent } from './components/historial-alq-empresas/historial-alq-empresas.component';
@@ -38,6 +40,8 @@ import { BicicletasComponent } from './components/bicicletas/bicicletas.componen
 import { CondicionesBasicComponent } from './components/condiciones-basic/condiciones-basic.component';
 import { SolicitudTarjetaComponent } from './components/solicitud-tarjeta/solicitud-tarjeta.component';
 import { PlanBasicComponent } from './components/plan-basic/plan-basic.component';
+import { MinibmxEComponent } from './components/minibmx-e/minibmx-e.component';
+import { AniadirModeloComponent } from './components/aniadir-modelo/aniadir-modelo.component';
 
 const routes: Routes = [  
   {path:"login",component:LoginComponent},
@@ -62,7 +66,7 @@ const routes: Routes = [
   {path:"historial",component:HistorialComponent},
   {path:"verPerfil",component:VerPerfilComponent},
   {path:"carrito",component:CarritoComponent},
-  {path:"minibmxx",component:MinibmxCComponent},
+  {path:"minibmxx/:id",component:MinibmxCComponent},
   {path:"ClientesPremium",component:ClientesPremiumComponent},
   {path:"AceptarSolicitud",component:AceptarSolicitudComponent},
   {path:"PerfilPremium",component:PerfilPremiumComponent},
@@ -77,7 +81,12 @@ const routes: Routes = [
   {path:"repartidores",component:RepartidoresComponent},
   {path:"alquilerRealizado",component:AlquilerRealizadoComponent},
   {path: "solicitud-tarjeta",component:SolicitudTarjetaComponent},
-  {path: "plan-basic", component:PlanBasicComponent},
+  {path: "planBasic", component:PlanBasicComponent},
+  {path: "nuevo-repartidor", component:RepartidoresAgregarComponent},
+  {path: "editarRepartidor/:id", component:RepartidoresEditarComponent},
+  {path: "minibmx-empresa/:id", component:MinibmxEComponent},
+  {path: "añadir-modelo", component:AniadirModeloComponent},
+
   {path:"",component:LoginComponent},
 
 ];

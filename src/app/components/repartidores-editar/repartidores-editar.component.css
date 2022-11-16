@@ -22,35 +22,46 @@
     text-align: right;
 }
 
-
-p{
-    font-weight: bold;
-    font-size: 25px;
-}
-
-
 .a{
     margin-top: 1%;
     display: flex;
     justify-content: center;
 }
+
+.b{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+
 .cajagris{
     padding: 2%;
     width: 90%;
     height: auto;
     background-color: grey;
 }
-.mat-form-field {
-    font-size: 15px;
-    width: 100%;
-    margin-bottom: 2%;
-}
-table {
-    width: 100%;
-    margin: auto;
+
+.example-full-width{
+    width: 25%;
 }
 
-.mat-paginator{
-    width: 100%;
-    margin: auto;
+.cuadro{
+    padding: 1%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mat-raised-button{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.search-div {
+    /*border:1px solid black;*/
+    text-align:right;
+    padding-top:10px;
+    font-size:15px;
+    margin-bottom: 17px;
 }

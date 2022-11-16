@@ -1,5 +1,5 @@
 <body>
-    <app-navbar></app-navbar>
+    <app-navbar-empresa></app-navbar-empresa>
     <div class="container contenedor-bicicletas">
         <div class="row">
             <div class="col-lg-3">                                                                  <!--Primera columna-->
@@ -100,10 +100,10 @@
                 <div class="row row-modelos"> 
                     <div class="row">
                         <div class="col-11">
-                            <p class="bmx-title">Mini BMX</p>
+                            <p class="bmx-title">Editar modelo</p>
                         </div>
                         <div class="col-1 button-icon"> <!--CAMBIO-->
-                            <div class="row"><a href="Carrito.html" class="text-iconos text-decoration-none"><i class="bi bi-pencil-square" style="font-size: 30px;"></i></a></div>
+                            <div class="row"><a href="" class="text-iconos text-decoration-none"><i class="bi bi-pencil-square" style="font-size: 30px;"></i></a></div>
                         </div>
                     </div>
                     <!--primera col-->
@@ -112,24 +112,24 @@
                             <a class="btn fd-bolder col-11 text-start" data-bs-toggle="modal" data-bs-target="#staticBackdrop">                 
                                 <div class="row align-items-center">
                                     <div class="row">
-                                        <div class="img-minibmx img-minibmx-deta"></div>
+                                        <img src="{{getImagen()}}">
                                     </div>
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                       <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">                                            
                                             <div class="modal-body">
-                                                <img id="imgZoom" src="../../../assets/imgs/img-mini-bmx.png" class="img-fluid img-thumbnail" alt="Mensaje" width= "1500" height="1340">
+                                                <img id="imgZoom" src="{{getImagen()}}" class="img-fluid img-thumbnail" alt="Mensaje" width= "1500" height="1340">
                                             </div>                                        
                                         </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </a>
 
-                            <div class="row">
-                                <div class="img-bicicletas"></div>
-                            </div>
+
                         </div>
                         <!--segunda col-->
                         <div class="col-lg-4 col-sm-6"> 
@@ -145,8 +145,8 @@
                             <div class="row box-detalles-producto">
                                 <p class="text-detalles-producto">DETALLES DEL PRODUCTO:</p>
                             </div>
-                            <div>
-                                <p class="text-detalles">Sección:</p>
+                            <ul>
+                                <!--<p class="text-detalles">Sección:</p>
                                 <p class="text-detalles">Medida de marco:</p>
                                 <p class="text-detalles">Vintage:</p>
                                 <p class="text-detalles">MPN:</p>
@@ -162,11 +162,17 @@
                                 <p class="text-detalles">Tipo de suspención:</p>
                                 <p class="text-detalles">Modelo:</p>
                                 <p class="text-detalles">Material:</p>
-                            </div>
+                                <li class="text-detalles">ID Empresa:</li>      -->
+                                <li class="text-detalles">Modelo:</li>
+                                <li class="text-detalles">Marca:</li>
+                                <li class="text-detalles">Color:</li>
+                                <li class="text-detalles">Tipo:</li>
+                                <li class="text-detalles">Imagen:</li>
+                            </ul>
                         </div>
                         <div class="col-lg-4 col-sm-6"> <!--tercera col-->
                             <div style="margin-top: 95px;">
-                                <p class="text-detalles">Unisex</p>
+                                <!--<p class="text-detalles">Unisex</p>
                                 <p class="text-detalles">11.5"</p>
                                 <p class="text-detalles">No</p>
                                 <p class="text-detalles">IROKMETAL</p>
@@ -181,8 +187,52 @@
                                 <p class="text-detalles">Morado</p>
                                 <p class="text-detalles">No suspención</p>
                                 <p class="text-detalles">iROK+</p>
-                                <p class="text-detalles">Acero</p>
+                                <p class="text-detalles">Acero</p>-->
                             </div>
+
+                            <form [formGroup]="myForm" autocomplete="off">
+
+                                <!--
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="id_empresa" placeholder="Ingrese id...">
+                                </mat-form-field>
+                                
+                                <br>
+                        
+                                <div *ngIf="myForm.get('id_empresa')?.hasError('required') && myForm.get('id_empresa')?.touched">
+                                    <span style="color:red;">Este campo es obligatorio</span>
+                                </div>
+                                -->
+                        
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="modelo" placeholder="Ingrese el modelo...">
+                                </mat-form-field>
+                        
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="marca" placeholder="Ingrese la marca...">
+                                </mat-form-field>
+                                                
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="color" placeholder="Ingrese el color...">
+                                </mat-form-field>
+                                                
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="tipo" placeholder="Ingrese el tipo...">
+                                </mat-form-field>
+                                
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="imagen" placeholder="Ingrese el link de la imagen...">
+                                </mat-form-field>
+                        
+                            </form>
+                            
+
+
+                        </div>
+                        <div class="espaciado">
+                            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="button" (click)="saveBicicleta()">Save</button>
+                            <button mat-raised-button color="secondary" routerLink="/resmod">Cancel</button>
+                            <button mat-raised-button color="warn" (click)="deleteBicicleta()">Delete</button>
                         </div>
                     </div>
                 </div>
