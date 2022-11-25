@@ -1,3 +1,5 @@
+import { EmpresaService } from './../../services/empresa.service';
+import { Empresa } from './../../models/Empresa';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,20 +15,24 @@ export class MinibmxEComponent implements OnInit {
 
   myForm!: FormGroup;
   id!: number;
+  datosBicicleta!: Bicicleta;
+  empresas!: Empresa[];
+  idEmpresa!: any;
 
   constructor(private formBuilder:FormBuilder,
     private bicicletaService: BicicletaService,
+    private empresaService: EmpresaService,
     private router: Router,
-    private activatedRouter: ActivatedRoute) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.reactiveForm();
+    this.idEmpresa = this.route.snapshot.params['idEmpresa'];
   }
 
   reactiveForm() {
     this.myForm = this.formBuilder.group({
       id:[""],
-      //id_empresa:["", [Validators.required]],  //import Validators
       modelo:["", [Validators.required]],
       marca:["", [Validators.required]],
       color:["", [Validators.required]],
@@ -34,30 +40,42 @@ export class MinibmxEComponent implements OnInit {
       imagen:["", [Validators.required]]
     })
 
-    this.id = this.activatedRouter.snapshot.params["id"];
+    this.id = this.route.snapshot.params["id"];
 
     if((this.id!=undefined && this.id!=0)) {
+
       this.bicicletaService.getOneBicicleta(this.id).subscribe(
         (data: Bicicleta) => {
-          this.myForm.get("id")!.setValue(data.id);
-          //this.myForm.get("id_empresa")!.setValue(data.id_empresa);
-          this.myForm.get("modelo")!.setValue(data.modelo);
-          this.myForm.get("marca")!.setValue(data.marca);
-          this.myForm.get("color")!.setValue(data.color);
-          this.myForm.get("tipo")!.setValue(data.tipo);
-          this.myForm.get("imagen")!.setValue(data.imagen);
+          this.datosBicicleta = data;
+
+          this.myForm = this.formBuilder.group({            
+            color: [this.datosBicicleta.color,[Validators.required]],
+            modelo: [this.datosBicicleta.modelo,[Validators.required]],
+            marca: [this.datosBicicleta.marca,[Validators.required]],
+            tipo: [this.datosBicicleta.tipo,[Validators.required]],
+            imagen: [this.datosBicicleta.imagen,[Validators.required]],
+          })
         }
       )
+
     }
     else {
       this.id = 0;
     }
+
+    /*this.myForm.get("imagen")!.setValue(this.datosBicicleta.imagen);
+    this.myForm.get("id")!.setValue(data.id_empresa.id);
+    this.myForm.get("modelo")!.setValue(data.modelo);
+    this.myForm.get("marca")!.setValue(data.marca);
+    this.myForm.get("color")!.setValue(data.color);
+    this.myForm.get("tipo")!.setValue(data.tipo);*/
   }
+
 
   saveBicicleta():void{
     const bicicleta:Bicicleta = {
       id:this.id,
-      id_empresa:this.myForm.get("id_empresa")?.value,
+      empresa:this.myForm.get("empresa")?.value,
       modelo:this.myForm.get("modelo")?.value,
       marca:this.myForm.get("marca")?.value,
       color:this.myForm.get("color")?.value,
@@ -68,7 +86,7 @@ export class MinibmxEComponent implements OnInit {
     if(this.id == 0) { //se agrega
       this.bicicletaService.addBicicleta(bicicleta).subscribe({
         next: (data) => {
-          this.router.navigate(["/resmod"]);
+          this.router.navigate(["/resmod",this.idEmpresa]);
         },
         error: (err) => {
           console.log(err);
@@ -77,10 +95,10 @@ export class MinibmxEComponent implements OnInit {
     } else {
       this.bicicletaService.updateBicicleta(this.id ,bicicleta).subscribe({
         next: (data) => {
-          this.router.navigate(["/resmod"]);
+          this.router.navigate(["/resmod",this.idEmpresa]);
         },
         error: (err) => {
-          this.router.navigate(["/resmod"]);
+          //this.router.navigate(["/resmod"]);
           console.log(err);
         }
       })
@@ -90,7 +108,7 @@ export class MinibmxEComponent implements OnInit {
   deleteBicicleta(){
     this.bicicletaService.deleteBicicleta(this.id).subscribe({
       next: (data) => {
-        this.router.navigate(["/resmod"]);
+        this.router.navigate(["/resmod",this.idEmpresa]);
       },
       error:(err) => {
         console.log(err);
@@ -102,5 +120,13 @@ export class MinibmxEComponent implements OnInit {
     return this.myForm.get("imagen")?.value
   }
 
+  getEmpresas():void {
+    this.empresaService.getEmpresas().subscribe((data: Empresa[])=>{
+      this.empresas=data;
+    })
+  }
 
+  cancel(){
+    this.router.navigate(["/resmod",this.idEmpresa]);
+  }
 }

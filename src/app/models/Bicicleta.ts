@@ -1,3 +1,4 @@
+import { Empresa } from './Empresa';
 export interface Bicicleta {
     id: number;
     modelo: string;
@@ -5,5 +6,5 @@ export interface Bicicleta {
     color: string;
     tipo: string;
     imagen: string;
-    id_empresa: number;
+    empresa: Empresa;
 }

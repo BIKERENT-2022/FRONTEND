@@ -5,7 +5,7 @@
         
     <div class="cajaTransparente">
 
-        <form [formGroup]="myForm" (ngSubmit)="ValidarCampos()" novalidate>
+        <form [formGroup]="myForm">  <!--(ngSubmit)="ValidarCampos()" novalidate> -->
             <div class="cajas">
                 <div class="form-floating mb-2">
                     <input formControlName = "Nombre" type="text" class="form-control" id="Nombre" placeholder="Nombre Completo">
@@ -46,12 +46,12 @@
             
 
                 <div class="form-floating mb-2">
-                    <input formControlName = "RUC" type="text" class="form-control" id="RUC" placeholder="RUC">
-                    <label for="floatingInput">RUC</label>
-                    <div *ngIf="myForm.get('RUC')?.errors && myForm.get('RUC')?.touched">
-                        <p class = "not_error" *ngIf="myForm.get('RUC')?.hasError('required')"> Este campo es obligatorio</p>
-                        <p class = "not_error" *ngIf="myForm.get('RUC')?.hasError('pattern')"> Solo caracteres numéricos </p>
-                        <p class = "not_error" *ngIf="myForm.get('RUC')?.hasError('minLength') || myForm.get('RUC')?.hasError('maxLength')  "> El N° debe ser de 10 dígitos </p>
+                    <input formControlName = "DNI" type="text" class="form-control" id="DNI" placeholder="DNI">
+                    <label for="floatingInput">DNI</label>
+                    <div *ngIf="myForm.get('DNI')?.errors && myForm.get('DNI')?.touched">
+                        <p class = "not_error" *ngIf="myForm.get('DNI')?.hasError('required')"> Este campo es obligatorio</p>
+                        <!--<p class = "not_error" *ngIf="myForm.get('DNI')?.hasError('pattern')"> Solo caracteres numéricos </p>-->
+                        <p class = "not_error" *ngIf="myForm.get('DNI')?.hasError('minLength') || myForm.get('DNI')?.hasError('maxLength')  "> El N° debe ser de 10 dígitos </p>
                     </div>
                 </div>
 
@@ -69,8 +69,9 @@
             </div>
         
             <div class="boton" >
-                <button type="submit" id = "accept" class="btn btn-outline-info">Aceptar</button>
+                <button type="submit" id = "accept" class="btn btn-outline-info" (click)='UpdateCliente()'>Aceptar</button>
             </div> 
         </form>   
     </div>
+
 </div>

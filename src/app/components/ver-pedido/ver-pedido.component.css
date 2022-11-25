@@ -86,4 +86,9 @@ footer{
     background-color: darkgray;
 }
 
+.map-size {
+    width: 70%;
+    height: 338px;
+    margin-bottom: 20px;
+}
 

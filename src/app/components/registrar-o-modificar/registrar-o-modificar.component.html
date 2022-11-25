@@ -93,7 +93,7 @@
                 <div class="row">
                     <div class="col-8"> <!--titulo-->
                         <label style="color: #00D0D0; font-size: 32px;"><b>Registrar o modificar modelos</b></label> 
-                        <i class="bi bi-pencil-square" style="font-size: 30px;" routerLink="/añadir-modelo" style="cursor:pointer;"></i> 
+                        <i class="bi bi-pencil-square" style="font-size: 30px;" (click)="formularioRegistrar()" style="cursor:pointer;"></i> 
                     </div>
                     <div class="col-4 search-div">
                         <button class="search-button" type="submit">
@@ -110,49 +110,17 @@
                 </div>
                 <div class="row row-modelos"> <!--imagenes bicicletas-->
                     <div class="row">
-                        <!--<div class="col-md-4 col-sm-6 button-img">
-                            <div class="img-campera bicicleta-img"></div>
-                            <p class="text-img">Campera</p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 button-img">
-                            <div class="img-montaniera bicicleta-img"></div>
-                            <p class="text-img">Montañera</p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 button-img">
-                            <div class="img-minibmx bicicleta-img"></div>
-                            <p class="text-img">Mini BMX</p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 button-img">
-                            <div class="img-bmx bicicleta-img"></div>
-                            <p class="text-img">BMX</p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 button-img">
-                            <div class="img-plegable bicicleta-img"></div>
-                            <p class="text-img">Plegable</p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 button-img" routerLink="/añadir-modelo">
-                            <div class="img-electrica bicicleta-img"></div>
-                            <p class="text-img">Añadir modelo</p>
-                        </div>-->
                         
                         <div>
                             <div class="table-scroll">
                             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%; background-color: transparent;">
-
-                                <!--- Note that these columns can be defined in any order.
-                                      The actual rendered columns are set as a property on the row definition" -->
-                              
-                                <!-- ID Column 
-                                <ng-container matColumnDef="id">
-                                  <th mat-header-cell *matHeaderCellDef> ID </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                                </ng-container>-->
                               
                                 <!-- IMG Column -->
                                 <ng-container matColumnDef="img">
                                   <th mat-header-cell *matHeaderCellDef> Image </th>
+                                  
                                   <td mat-cell *matCellDef="let element"> 
-                                    <a style="cursor:pointer; margin: 100px;" routerLink="/minibmx-empresa/{{element.id}}">
+                                    <a style="cursor:pointer; margin: 100px;" (click)="bicicletaEscogida(element.id)">
                                         <img src="{{element.imagen}}" alt="Image" style="width: 200px; height: auto;"> 
                                         <label style="color: black; margin-left: 20px; font-size: 20px; font-weight: bold; cursor:pointer">{{element.modelo}}</label>
 
@@ -166,19 +134,13 @@
 
                         </div>
                           
-                        <!--<mat-grid-list cols="2" rowHeight="2:1" style="background: lightblue;">
-                        <mat-grid-tile>
-                            <img src="https://home.ripley.com.pe/Attachment/WOP_5/2022274953088/2022274953088-2.jpg" alt="Image" style="width: 200px; height: auto;">
-                        </mat-grid-tile>
-                        <mat-grid-tile>2</mat-grid-tile>
-                        <mat-grid-tile>3</mat-grid-tile>
-                        <mat-grid-tile>4</mat-grid-tile>
-                        </mat-grid-list>
-                        -->
                     </div>
                 </div>
+                <br>
+                <button mat-raised-button-color="secondary" (click)="exportExcel()">Exportar</button>
+                <br>
             </div>
-        </div> <!--style="background-color:red"-->
+        </div> 
     </div>
     
 </body>

@@ -45,12 +45,17 @@ export class RegistroComponent implements OnInit {
         usuario : this.myForm.get('usuario')!.value,
         contrasenia : this.myForm.get('contrasenia')!.value
       }
-  
+
       this.usuarioService.addUsuario(listaUsuarios).subscribe({
         next:(data)=>{
+          let usuario = this.myForm.get('usuario')!.value;
           this.snackBar.open('registrado correctamente', '',{duration: 2000});
-          if(this.myForm.get('tipo_usuario')!.value=='Cliente'){this.router.navigate(['/Condicionesbasic'])}
-          else if (this.myForm.get('tipo_usuario')!.value=='Empresa') {this.router.navigate(['/condicionesEmpresa'])} 
+          if(this.myForm.get('tipo_usuario')!.value=='Cliente')
+          {
+            this.router.navigate(['/Condicionesbasic', usuario])
+          }
+          else if (this.myForm.get('tipo_usuario')!.value=='Empresa') 
+          {this.router.navigate(['/condicionesEmpresa', usuario])} 
         },
         error: (err)=>{console.log(err)}
       })
