@@ -30,6 +30,7 @@ export class ClientesPremiumComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })
+<<<<<<< HEAD
   }
 
 
@@ -52,6 +53,8 @@ export class ClientesPremiumComponent implements OnInit {
         }
       }
     );
+=======
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
   }
 
 }

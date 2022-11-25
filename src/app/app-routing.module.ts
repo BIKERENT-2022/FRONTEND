@@ -69,6 +69,8 @@ const routes: Routes = [
   {path:"carrito",component:CarritoComponent},
   {path:"minibmxx/:idCliente/:id",component:MinibmxCComponent},
   {path:"ClientesPremium/:idEmpresa",component:ClientesPremiumComponent},
+  {path:"minibmxx/:id",component:MinibmxCComponent},
+  {path:"ClientesPremium",component:ClientesPremiumComponent},
   {path:"AceptarSolicitud",component:AceptarSolicitudComponent},
   {path:"PerfilPremium",component:PerfilPremiumComponent},
   {path:"Solicitudes",component:SolicitudesComponent},
@@ -81,6 +83,7 @@ const routes: Routes = [
   {path:"perfilpremium",component:PerfilPremiumComponent},
   {path:"repartidores/:idEmpresa",component:RepartidoresComponent},
   {path:"alquilerRealizado",component:AlquilerRealizadoComponent},
+
   {path:"solicitud-tarjeta",component:SolicitudTarjetaComponent},
   {path:"planBasic", component:PlanBasicComponent},
   {path:"nuevo-repartidor", component:RepartidoresAgregarComponent},
@@ -88,6 +91,13 @@ const routes: Routes = [
   {path:"minibmx-empresa/:idEmpresa/:id", component:MinibmxEComponent},
   {path:"añadir-modelo/:idEmpresa", component:AniadirModeloComponent},
   {path:"AlquilerEmpresas", component:AlquilerEmpresasComponent},
+
+  {path: "solicitud-tarjeta",component:SolicitudTarjetaComponent},
+  {path: "planBasic", component:PlanBasicComponent},
+  {path: "nuevo-repartidor", component:RepartidoresAgregarComponent},
+  {path: "editarRepartidor/:id", component:RepartidoresEditarComponent},
+  {path: "minibmx-empresa/:id", component:MinibmxEComponent},
+  {path: "añadir-modelo", component:AniadirModeloComponent},
 
   {path:"",component:LoginComponent},
 

@@ -15,6 +15,7 @@ export class MinibmxEComponent implements OnInit {
 
   myForm!: FormGroup;
   id!: number;
+<<<<<<< HEAD
   datosBicicleta!: Bicicleta;
   empresas!: Empresa[];
   idEmpresa!: any;
@@ -28,11 +29,25 @@ export class MinibmxEComponent implements OnInit {
   ngOnInit(): void {
     this.reactiveForm();
     this.idEmpresa = this.route.snapshot.params['idEmpresa'];
+=======
+
+  constructor(private formBuilder:FormBuilder,
+    private bicicletaService: BicicletaService,
+    private router: Router,
+    private activatedRouter: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.reactiveForm();
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
   }
 
   reactiveForm() {
     this.myForm = this.formBuilder.group({
       id:[""],
+<<<<<<< HEAD
+=======
+      //id_empresa:["", [Validators.required]],  //import Validators
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
       modelo:["", [Validators.required]],
       marca:["", [Validators.required]],
       color:["", [Validators.required]],
@@ -40,6 +55,7 @@ export class MinibmxEComponent implements OnInit {
       imagen:["", [Validators.required]]
     })
 
+<<<<<<< HEAD
     this.id = this.route.snapshot.params["id"];
 
     if((this.id!=undefined && this.id!=0)) {
@@ -58,10 +74,27 @@ export class MinibmxEComponent implements OnInit {
         }
       )
 
+=======
+    this.id = this.activatedRouter.snapshot.params["id"];
+
+    if((this.id!=undefined && this.id!=0)) {
+      this.bicicletaService.getOneBicicleta(this.id).subscribe(
+        (data: Bicicleta) => {
+          this.myForm.get("id")!.setValue(data.id);
+          //this.myForm.get("id_empresa")!.setValue(data.id_empresa);
+          this.myForm.get("modelo")!.setValue(data.modelo);
+          this.myForm.get("marca")!.setValue(data.marca);
+          this.myForm.get("color")!.setValue(data.color);
+          this.myForm.get("tipo")!.setValue(data.tipo);
+          this.myForm.get("imagen")!.setValue(data.imagen);
+        }
+      )
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
     }
     else {
       this.id = 0;
     }
+<<<<<<< HEAD
 
     /*this.myForm.get("imagen")!.setValue(this.datosBicicleta.imagen);
     this.myForm.get("id")!.setValue(data.id_empresa.id);
@@ -76,6 +109,14 @@ export class MinibmxEComponent implements OnInit {
     const bicicleta:Bicicleta = {
       id:this.id,
       empresa:this.myForm.get("empresa")?.value,
+=======
+  }
+
+  saveBicicleta():void{
+    const bicicleta:Bicicleta = {
+      id:this.id,
+      id_empresa:this.myForm.get("id_empresa")?.value,
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
       modelo:this.myForm.get("modelo")?.value,
       marca:this.myForm.get("marca")?.value,
       color:this.myForm.get("color")?.value,
@@ -86,7 +127,11 @@ export class MinibmxEComponent implements OnInit {
     if(this.id == 0) { //se agrega
       this.bicicletaService.addBicicleta(bicicleta).subscribe({
         next: (data) => {
+<<<<<<< HEAD
           this.router.navigate(["/resmod",this.idEmpresa]);
+=======
+          this.router.navigate(["/resmod"]);
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
         },
         error: (err) => {
           console.log(err);
@@ -95,10 +140,17 @@ export class MinibmxEComponent implements OnInit {
     } else {
       this.bicicletaService.updateBicicleta(this.id ,bicicleta).subscribe({
         next: (data) => {
+<<<<<<< HEAD
           this.router.navigate(["/resmod",this.idEmpresa]);
         },
         error: (err) => {
           //this.router.navigate(["/resmod"]);
+=======
+          this.router.navigate(["/resmod"]);
+        },
+        error: (err) => {
+          this.router.navigate(["/resmod"]);
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
           console.log(err);
         }
       })
@@ -108,7 +160,11 @@ export class MinibmxEComponent implements OnInit {
   deleteBicicleta(){
     this.bicicletaService.deleteBicicleta(this.id).subscribe({
       next: (data) => {
+<<<<<<< HEAD
         this.router.navigate(["/resmod",this.idEmpresa]);
+=======
+        this.router.navigate(["/resmod"]);
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
       },
       error:(err) => {
         console.log(err);
@@ -120,6 +176,7 @@ export class MinibmxEComponent implements OnInit {
     return this.myForm.get("imagen")?.value
   }
 
+<<<<<<< HEAD
   getEmpresas():void {
     this.empresaService.getEmpresas().subscribe((data: Empresa[])=>{
       this.empresas=data;
@@ -129,4 +186,7 @@ export class MinibmxEComponent implements OnInit {
   cancel(){
     this.router.navigate(["/resmod",this.idEmpresa]);
   }
+=======
+
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }

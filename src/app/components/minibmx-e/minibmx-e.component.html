@@ -145,7 +145,28 @@
                             <div class="row box-detalles-producto">
                                 <p class="text-detalles-producto">DETALLES DEL PRODUCTO:</p>
                             </div>
+<<<<<<< HEAD
                             <ul>  
+=======
+                            <ul>
+                                <!--<p class="text-detalles">Sección:</p>
+                                <p class="text-detalles">Medida de marco:</p>
+                                <p class="text-detalles">Vintage:</p>
+                                <p class="text-detalles">MPN:</p>
+                                <p class="text-detalles">Tipo de freno: </p>
+                                <p class="text-detalles">Tipo de neumático:</p>
+                                <p class="text-detalles">Número de velocidades:</p>
+                                <p class="text-detalles">UPC:</p>
+                                <p class="text-detalles">Tipo de Manilla:</p>
+                                <p class="text-detalles">Marca:</p>
+                                <p class="text-detalles">Tamaño de rueda:</p>
+                                <p class="text-detalles">Tipo de bicicleta:</p>
+                                <p class="text-detalles">Color:</p>
+                                <p class="text-detalles">Tipo de suspención:</p>
+                                <p class="text-detalles">Modelo:</p>
+                                <p class="text-detalles">Material:</p>
+                                <li class="text-detalles">ID Empresa:</li>      -->
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
                                 <li class="text-detalles">Modelo:</li>
                                 <li class="text-detalles">Marca:</li>
                                 <li class="text-detalles">Color:</li>
@@ -155,12 +176,46 @@
                         </div>
                         <div class="col-lg-4 col-sm-6"> <!--tercera col-->
                             <div style="margin-top: 95px;">
+<<<<<<< HEAD
 
+=======
+                                <!--<p class="text-detalles">Unisex</p>
+                                <p class="text-detalles">11.5"</p>
+                                <p class="text-detalles">No</p>
+                                <p class="text-detalles">IROKMETAL</p>
+                                <p class="text-detalles">Sin freno</p>
+                                <p class="text-detalles">Llantas gruesas</p>
+                                <p class="text-detalles">1 velocidad</p>
+                                <p class="text-detalles">0700465834263</p>
+                                <p class="text-detalles">BMX Bar</p>
+                                <p class="text-detalles">ROCKER</p>
+                                <p class="text-detalles">10</p>
+                                <p class="text-detalles">BMX</p>
+                                <p class="text-detalles">Morado</p>
+                                <p class="text-detalles">No suspención</p>
+                                <p class="text-detalles">iROK+</p>
+                                <p class="text-detalles">Acero</p>-->
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
                             </div>
 
                             <form [formGroup]="myForm" autocomplete="off">
 
+<<<<<<< HEAD
                                                        
+=======
+                                <!--
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="id_empresa" placeholder="Ingrese id...">
+                                </mat-form-field>
+                                
+                                <br>
+                        
+                                <div *ngIf="myForm.get('id_empresa')?.hasError('required') && myForm.get('id_empresa')?.touched">
+                                    <span style="color:red;">Este campo es obligatorio</span>
+                                </div>
+                                -->
+                        
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
                                 <mat-form-field appearance="standard">
                                     <input matInput formControlName="modelo" placeholder="Ingrese el modelo...">
                                 </mat-form-field>
@@ -188,7 +243,11 @@
                         </div>
                         <div class="espaciado">
                             <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="button" (click)="saveBicicleta()">Save</button>
+<<<<<<< HEAD
                             <button mat-raised-button color="secondary" (click)="cancel()">Cancel</button>
+=======
+                            <button mat-raised-button color="secondary" routerLink="/resmod">Cancel</button>
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
                             <button mat-raised-button color="warn" (click)="deleteBicicleta()">Delete</button>
                         </div>
                     </div>

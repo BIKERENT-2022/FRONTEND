@@ -9,6 +9,7 @@
                 <div class ="col-md-6 col-sm-12 datos "> <!--datos-->
                         <img src ="{{getImagen()}}" class = "imgperfil" alt = "imgperfil">
 
+<<<<<<< HEAD
                         <a style="margin-left: 25%"> Modificar foto:</a><br>
 
                         <input style="margin-left: 25%" class="border border-info" formControlName="imagen" type="imagen" name = "imagen" id = "imagen" placeholder="imagen.jpg">
@@ -41,6 +42,23 @@
             </form>
             </div>
         
+=======
+        <div class = "datos">
+            <a> Nombre completo:</a><br>
+                <input class="border border-info" type="text" name = "text" id = "fullname" placeholder="Alexandra Valera"><br><br>
+            <a> DNI: </a><br>
+                <input class="border border-info" type="text" name = "number" id = "DNI" placeholder="78907658"><br><br>
+            <a> Contraseña:</a><br>
+                <input class="border border-info" type="password" name = "password" id = "password" placeholder="*******"><br><br>
+            <a> Número de telefono:</a><br>
+                <input class="border border-info" type="tel" name = "tel" id = "phone" placeholder = "952784961"> <i onclick = DeleteInput(3) class="bi bi-x-square"></i> 
+                <i class="bi bi-pencil-square"></i><br><br>
+            <a> Tipo de Plan:</a><br>
+                <input class="border border-info" type="text" name = "number" id = "plan" placeholder = "Plan Basic"> 
+                <a routerLink="/planBasic"><i class="bi bi-pencil-square"></i> </a> <br><br>
+            <button type="button" class="btn btn-info"  style="color:white"> Perfil privado</button> 
+            <button type="button" class="btn btn-outline-info"> Perfil público</button>
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
         </div>
     </div>		  
 </div>

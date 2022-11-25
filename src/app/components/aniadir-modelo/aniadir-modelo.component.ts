@@ -1,3 +1,4 @@
+
 import { EmpresaService } from './../../services/empresa.service';
 import { Empresa } from './../../models/Empresa';
 import { Bicicleta } from './../../models/Bicicleta';
@@ -5,7 +6,6 @@ import { BicicletaService } from './../../services/bicicleta.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-aniadir-modelo',
@@ -17,33 +17,27 @@ export class AniadirModeloComponent implements OnInit {
   myForm!: FormGroup;
   id!: number;
   empresa!:Empresa;
-  idEmpresa!: any;
-
 
   constructor(private formBuilder:FormBuilder,
     private bicicletaService: BicicletaService,
-    private empresaService: EmpresaService,
     private router: Router,
     private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.reactiveForm();
-    this.idEmpresa = this.activatedRouter.snapshot.params['idEmpresa'];
   }
 
   reactiveForm() {
     this.myForm = this.formBuilder.group({
       id:[""],
-      modelo:["", [Validators.required]],
-      marca:["", [Validators.required]],
+      id_empresa:["", [Validators.required]],  //import Validators
       color:["", [Validators.required]],
-      tipo:["", [Validators.required]],
       imagen:["", [Validators.required]]
     })
 
     this.id = this.activatedRouter.snapshot.params["id"];
 
-    /* 
+    /* LO COMENTEEEEEEEE
     if((this.id!=undefined && this.id!=0)) {
       this.bicicletaService.getOneBicicleta(this.id).subscribe(
         (data: Bicicleta) => {
@@ -63,39 +57,58 @@ export class AniadirModeloComponent implements OnInit {
     */
   }
 
-
   saveBicicleta():void{
 
-  //let emp = Empresa;
+  //let emp = new Empresa();
   //emp.id=this.idEmpresa;
 
-  console.log(this.idEmpresa);
 
-  this.empresaService.getEmpresaById(this.idEmpresa).subscribe((data)=>{
     const bicicleta:Bicicleta = {
+      id:this.id,
 
-      id:0,
+      //id_empresa= emp;
+
+      id_empresa:this.myForm.get("id_empresa")?.value,
+
+
       modelo:this.myForm.get("modelo")?.value,
       marca:this.myForm.get("marca")?.value,
       color:this.myForm.get("color")?.value,
       tipo:this.myForm.get("tipo")?.value,
-      imagen:this.myForm.get("imagen")?.value,
-      empresa:data
-
+      imagen:this.myForm.get("imagen")?.value
     }
 
     this.bicicletaService.addBicicleta(bicicleta).subscribe({
       next:(data)=>{
-        this.router.navigate(["/resmod",this.idEmpresa]);
+        this.router.navigate(["/resmod"]);
       }
-    })    });
+    })
+    
 
+    /*
+    if(this.id == 0) { //se agrega
+      this.bicicletaService.addBicicleta(bicicleta).subscribe({
+        next: (data) => {
+          this.router.navigate(["/resmod"]);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    } else {
+      this.bicicletaService.updateBicicleta(bicicleta).subscribe({
+        next: (data) => {
+          this.router.navigate(["/resmod"]);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+    }*/
 
   }
 
-  regresar(){
-    this.router.navigate(["/resmod",this.idEmpresa]);
-  }
+
 
 
 }

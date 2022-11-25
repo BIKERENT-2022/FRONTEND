@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .TitleProfile{
     margin-top: 40px;
     margin-bottom: 20px;
@@ -50,4 +51,69 @@ i {
 }
 button {
     margin-right: 10px;
+=======
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    margin-top: 10px;
+    width: 10%;
+    margin-top: 7%;
+    margin-bottom: 1%;
+}
+
+
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+
+.cajas{
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+.cajas input{
+    border: solid #00D0D0;
+    width: 500px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+}
+
+
+.gris{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: lightgrey;
+    border: dashed lightgrey;
+}
+
+.d{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.boton{
+    height: 50px;    
+    margin-bottom: 50px;
+}
+.btn-outline-info{
+    width: a;
+    font-weight: bold;
+    background-color: white;
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { Usuario } from './../models/Usuario';
+=======
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 import { environment } from './../../environments/environment';
 import { Cliente } from './../models/Cliente';
 import { HttpClient } from '@angular/common/http';
@@ -15,6 +18,7 @@ export class ClienteService {
 
   getCliente(){
     return this.http.get<Cliente[]>(`${this.basePath}/api/clientes`);
+<<<<<<< HEAD
   }
 
   getID(usuario: any){
@@ -33,4 +37,12 @@ export class ClienteService {
   getOneCliente(id: any) {
     return this.http.get<Cliente>(`${this.basePath}/api/clientes/${id}`);
   }
+=======
+  }
+
+  /*
+  addCliente(listaClientes: Cliente){
+    return this.http.post<Cliente>(this.basePath, listaClientes);
+  }*/
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }
