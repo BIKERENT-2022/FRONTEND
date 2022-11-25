@@ -63,11 +63,13 @@ p{
     height: 50px;
     margin-bottom: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+   
 }
 .boton .btn-outline-info{
     font-weight: bold;
-    background-color: white;
+    background-color: white; 
+    padding: 5px;
 }
 
 
@@ -77,20 +79,16 @@ p{
 }
 .tipo .btn-outline-info{
     font-weight: bold;
-    background-color: white;
-    width: 100px;
-}
-
-button{
-	justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 4px;
+    margin-left: 10px;
 }
 
 .text-muted{
     margin-top: 15px;
     display: flex;
     justify-content: center;
+    font-weight: bold;
+    margin-left: 25px
 }
 
 .alert{

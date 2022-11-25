@@ -1,46 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
-:root {
-    --Lightgray: #C4C4C4;
-    --White: white;
-    --Darkgray: #8B8B8B;
-    --Black: black;
-    --Blue: #00B2FF;
-    --Cyan: #00D0D0;
-    --DarkBlue: #052473;
-    --gradient: linear-gradient(90deg, var(-Blue), var(-Cyan));
-}
-.datos 
+.solicitud 
 {
     position: absolute;
     padding: auto;
     justify-content: center;
     text-align: center;
+    width: 700px;
+	height: 500px;
+    top: 50%;
+    left: 50%;       
+    margin-top: -230px;
+    margin-left: -350px;
+    font-size: 24px;
 }
-.datos .imgperfil {
-    justify-content: center;
-    align-items: center;
+.imgperfil{    
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;    
+    object-fit: cover; /*ajusta calidad img sgn tamaÃ±o*/
+    display:block;
+    margin:auto;
 }
-.imgperfil{
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
-  object-fit: cover; /*ajusta calidad img sgn tamaÃ±o*/
-  display:block;
-  margin:auto;
+figcaption p {
+    padding-top: 5px;
+    color:#00D0D0;
+    font-weight: bold;
 }
 .datos p {
 	text-align: center;
-}
-.datos a {    
-    text-decoration: none;
-    color: var(--Black);    
-}
-
-figcaption {
-    color: var(--Cyan);
-    size: 50px;
-}
-.btn .btn-info{
-	color: var(--White);
-	text-decoration-color: var(--White);
+    color: #8B8B8B;
 }
