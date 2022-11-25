@@ -26,7 +26,7 @@ export class MinibmxCComponent implements OnInit {
   reactiveForm() {
     this.myForm = this.formBuilder.group({
       id:[""],
-      id_empresa:["", [Validators.required]],  //import Validators
+      empresa:["", [Validators.required]],
       modelo:["", [Validators.required]],
       marca:["", [Validators.required]],
       color:["", [Validators.required]],
@@ -40,7 +40,7 @@ export class MinibmxCComponent implements OnInit {
       this.bicicletaService.getOneBicicleta(this.id).subscribe(
         (data: Bicicleta) => {
           this.myForm.get("id")!.setValue(data.id);
-          this.myForm.get("id_empresa")!.setValue(data.id_empresa);
+          this.myForm.get("empresa")!.setValue(data.empresa.ruc);
           this.myForm.get("modelo")!.setValue(data.modelo);
           this.myForm.get("marca")!.setValue(data.marca);
           this.myForm.get("color")!.setValue(data.color);

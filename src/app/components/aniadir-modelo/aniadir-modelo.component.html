@@ -1,5 +1,5 @@
 <body>
-    <app-navbar></app-navbar>
+    <app-navbar-empresa></app-navbar-empresa>
     <div class="container contenedor-bicicletas">
         <div class="row">
             <div class="col-lg-3">                                                                  <!--Primera columna-->
@@ -103,7 +103,7 @@
                             <p class="bmx-title">Añadir modelo</p>
                         </div>
                         <div class="col-1 button-icon">
-                            <div class="row"><a href="Carrito.html" class="text-iconos text-decoration-none"><i class="bi bi-pencil-square" style="font-size: 30px;"></i></a></div>
+                            <div class="row"><a class="text-iconos text-decoration-none"><i class="bi bi-pencil-square" style="font-size: 30px;"></i></a></div>
                         </div>
                     </div>
                     <!--primera col-->
@@ -126,23 +126,6 @@
                                 <p class="text-detalles-producto">DETALLES DEL PRODUCTO:</p>
                             </div>
                             <ul>
-                                <!--<p class="text-detalles">Sección:</p>
-                                <p class="text-detalles">Medida de marco:</p>
-                                <p class="text-detalles">Vintage:</p>
-                                <p class="text-detalles">MPN:</p>
-                                <p class="text-detalles">Tipo de freno: </p>
-                                <p class="text-detalles">Tipo de neumático:</p>
-                                <p class="text-detalles">Número de velocidades:</p>
-                                <p class="text-detalles">UPC:</p>
-                                <p class="text-detalles">Tipo de Manilla:</p>
-                                <p class="text-detalles">Marca:</p>
-                                <p class="text-detalles">Tamaño de rueda:</p>
-                                <p class="text-detalles">Tipo de bicicleta:</p>
-                                <p class="text-detalles">Color:</p>
-                                <p class="text-detalles">Tipo de suspención:</p>
-                                <p class="text-detalles">Modelo:</p>
-                                <p class="text-detalles">Material:</p>-->
-                                <li class="text-detalles">ID Empresa:</li>
                                 <li class="text-detalles">Modelo:</li>
                                 <li class="text-detalles">Marca:</li>
                                 <li class="text-detalles">Color:</li>
@@ -152,50 +135,26 @@
                         </div>
                         <div class="col-lg-4 col-sm-6"> <!--tercera col-->
                             <div style="margin-top: 65px;">
-                                <!--<p class="text-detalles">Unisex</p>
-                                <p class="text-detalles">11.5"</p>
-                                <p class="text-detalles">No</p>
-                                <p class="text-detalles">IROKMETAL</p>
-                                <p class="text-detalles">Sin freno</p>
-                                <p class="text-detalles">Llantas gruesas</p>
-                                <p class="text-detalles">1 velocidad</p>
-                                <p class="text-detalles">0700465834263</p>
-                                <p class="text-detalles">BMX Bar</p>
-                                <p class="text-detalles">ROCKER</p>
-                                <p class="text-detalles">10</p>
-                                <p class="text-detalles">BMX</p>
-                                <p class="text-detalles">Morado</p>
-                                <p class="text-detalles">No suspención</p>
-                                <p class="text-detalles">iROK+</p>
-                                <p class="text-detalles">Acero</p>-->
+
                                 <form [formGroup]="myForm" autocomplete="off">
 
-                                    <mat-form-field appearance="standard" style="color:black;">
-                                        <input matInput formControlName="id_empresa" placeholder="Ingrese id...">
-                                    </mat-form-field>
-                                    <!--
-                                    <br>
                             
-                                    <div *ngIf="myForm.get('id_empresa')?.hasError('required') && myForm.get('id_empresa')?.touched">
-                                        <span style="color:red;">Este campo es obligatorio</span>
-                                    </div>
-                                    -->                            
                                     <mat-form-field appearance="standard">
                                         <input matInput formControlName="modelo" placeholder="Ingrese el modelo...">
                                     </mat-form-field>
-
+                            
                                     <mat-form-field appearance="standard">
                                         <input matInput formControlName="marca" placeholder="Ingrese la marca...">
                                     </mat-form-field>
-                            
+                                                    
                                     <mat-form-field appearance="standard">
                                         <input matInput formControlName="color" placeholder="Ingrese el color...">
                                     </mat-form-field>
-                            
+                                                    
                                     <mat-form-field appearance="standard">
                                         <input matInput formControlName="tipo" placeholder="Ingrese el tipo...">
                                     </mat-form-field>
-                            
+                                    
                                     <mat-form-field appearance="standard">
                                         <input matInput formControlName="imagen" placeholder="Ingrese el link de la imagen...">
                                     </mat-form-field>
@@ -208,12 +167,12 @@
                     
                     <div class="espaciado">
                         <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="button" (click)="saveBicicleta()">Save</button>
-                        <button mat-raised-button color="secondary" routerLink="/resmod">Cancel</button>
+                        <button mat-raised-button color="secondary" (click)="regresar()">Cancel</button>
                     </div>
                 </div>
             </div>
             
-        </div> <!--style="background-color:red"-->
+        </div>
     </div>
     
 </body>

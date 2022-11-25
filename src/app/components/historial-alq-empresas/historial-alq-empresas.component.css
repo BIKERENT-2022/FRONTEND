@@ -20,9 +20,11 @@ input.form-control.form-control-lg{
     border-style: solid;
     color:#00B2FF;
     text-decoration: none;
+
 }
 div.card.text-center.col-md-8.vh-80.my-auto.mx-auto{
     transform: translateY(150px);
+    width: 100%;
     display: flex;
 }
 div.row.mb-2{
@@ -30,4 +32,5 @@ div.row.mb-2{
 }
 body {
     overflow-x: hidden
+    
 }

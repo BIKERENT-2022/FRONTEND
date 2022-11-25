@@ -1,14 +1,11 @@
 <form class = "cardprofile border border-dark">
     <div class =  "datos">
-        <form [formGroup]="myForm" (ngSubmit)="verificarPasswords()" novalidate>
+        <form [formGroup]="myForm" >  <!--(ngSubmit)="verificarPasswords()" novalidate>-->
             <p><i class="bi bi-pencil-square"> Cambiar contraseña</i></p><br>
-            <a> Correo electrónico:</a>
-                <input class="border border-info" type="email" name = "email" id = "email" formControlName="email">
-                <div *ngIf="myForm.get('email')?.hasError('required') && myForm.get('email')?.touched">
+            <a> Usuario:</a>
+                <input class="border border-info" type="text" name = "usuario" id = "usuario" formControlName="usuario">
+                <div *ngIf="myForm.get('usuario')?.hasError('required') && myForm.get('usuario')?.touched">
                     <span class = "not_error"> Este campo es obligatorio</span>
-                </div>
-                <div *ngIf="myForm.get('email')?.hasError('email') && myForm.get('email')?.touched">
-                    <span class = "not_error"> El correo ingresado no tiene un formato válido</span>
                 </div>
             
             <a> Nueva Contraseña:</a>
@@ -43,7 +40,7 @@
                 <!-- Fin Mensajes de Verificación -->
             </div>
             <br><br>
-            <button type="submit" id="login"  class=" button btn btn-outline-info">Solicitar cambio</button>
+            <button type="submit" id="login"  class=" button btn btn-outline-info" (click)="UpdatePassword()">Cambiar</button>
         </form>
     </div>
 </form>

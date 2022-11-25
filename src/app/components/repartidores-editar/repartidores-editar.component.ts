@@ -27,11 +27,11 @@ export class RepartidoresEditarComponent implements OnInit {
     this.RepartidorService.getRepartidorId(this.idRepartidor).subscribe((data)=>{
       this.Repartidor=data;
       this.myForm = this.fb.group({
-        Nombres: [this.Repartidor.Nombres,[Validators.required, Validators.maxLength(60)]],
-        Apellidos:[this.Repartidor.Apellidos,[Validators.required]],
-        DNI:[this.Repartidor.DNI,[Validators.required]],
-        Celular:[this.Repartidor.Celular,[Validators.required]],
-        CorreoElectronico:[this.Repartidor.CorreoElectronico,[Validators.required]],
+        nombre: [this.Repartidor.nombre,[Validators.required, Validators.maxLength(60)]],
+        apellido:[this.Repartidor.apellido,[Validators.required]],
+        dni:[this.Repartidor.dni,[Validators.required]],
+        celular:[this.Repartidor.celular,[Validators.required]],
+        v:[this.Repartidor.correo,[Validators.required]],
       })
     })
   }
@@ -39,11 +39,11 @@ export class RepartidoresEditarComponent implements OnInit {
   updateRepartidor(){
     const Repartidor: Repartidor = {
       id : 0,
-      Nombres : this.myForm.get('Nombres')!.value,
-      Apellidos : this.myForm.get('Apellidos')!.value,
-      DNI : this.myForm.get('DNI')!.value,
-      Celular : this.myForm.get('Celular')!.value,
-      CorreoElectronico : this.myForm.get('CorreoElectronico')!.value,
+      nombre : this.myForm.get('nombre')!.value,
+      apellido : this.myForm.get('apellido')!.value,
+      dni : this.myForm.get('dni')!.value,
+      celular : this.myForm.get('celular')!.value,
+      correo : this.myForm.get('correo')!.value,
     }
     this.RepartidorService.updateRepartidor(this.idRepartidor,Repartidor).subscribe({
       next:(data)=>{

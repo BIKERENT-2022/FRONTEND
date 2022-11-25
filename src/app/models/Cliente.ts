@@ -1,6 +1,5 @@
 export interface Cliente{
     id: number,
-     id: number,
     dni: string,
     nombre: string,
     correo: string,

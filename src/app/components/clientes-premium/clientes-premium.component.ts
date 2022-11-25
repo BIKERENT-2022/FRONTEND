@@ -32,4 +32,26 @@ export class ClientesPremiumComponent implements OnInit {
     })
   }
 
+
+
+
+  exportExcel() {
+    this.ClienteService.exportCliente().subscribe({
+        next: (data: any) => {
+          let file = new Blob([data], {
+            type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          });
+          let fileURL = URL.createObjectURL(file);
+          var anchor = document.createElement('a');
+          anchor.download="cliente_reporte.xlsx";
+          anchor.href=fileURL;
+          anchor.click();
+        },
+        error: (error: any) => {
+          console.log("No se pudo exportar");
+        }
+      }
+    );
+  }
+
 }
