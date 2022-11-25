@@ -47,8 +47,7 @@ export class LoginComponent implements OnInit {
 
     for(const element of this.usuarios){
       if(element.contrasenia == contra  && element.usuario == usu && element.tipo_usuario=="Cliente"){
-<<<<<<< HEAD
-        
+      
         this.router.navigate(['/home',element.id]);
         break;
 
@@ -57,15 +56,13 @@ export class LoginComponent implements OnInit {
         
         this.router.navigate(['/Homee',element.id]);
         break;
-        
-=======
+
         this.router.navigate(['/home']);
         break;
       }
       else if(element.contrasenia == contra  && element.usuario == usu && element.tipo_usuario=="Empresa") {
         this.router.navigate(['/Homee']);
         break;
->>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
       }
       position++
     }
@@ -78,14 +75,6 @@ export class LoginComponent implements OnInit {
     }
 
   }
-
-
-
-
-
-
-
-
 
   login(){
     this.http.get<any>("http://localhost:3000/Cliente")
