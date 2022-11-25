@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   serverJson: "http://localhost:8080",
+  resourceUsuarios: "/api/usuarios"
 };
 
 /*

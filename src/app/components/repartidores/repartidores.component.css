@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -14,11 +15,14 @@
     font-weight: bold;
     color:#00D0D0;
     font-size: 50px;
+<<<<<<< HEAD
 }
 
 .cuadro{
     width: 100%;
     text-align: right;
+=======
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }
 
 p{
@@ -26,11 +30,12 @@ p{
     font-size: 25px;
 }
 
-.a{
-    display: flex;
-    justify-content: center;
+.cuadro{
+    width: 100%;
+    text-align: right;
 }
 
+<<<<<<< HEAD
 .cajagris{
     width: 90%;
     height: auto;
@@ -47,12 +52,41 @@ table {
     margin: auto;
     border: 1px solid rgb(180, 180, 180);
 
+=======
+
+p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.a{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+.cajagris{
+    padding: 2%;
+    width: 90%;
+    height: auto;
+    background-color: grey;
+}
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+table {
+    width: 100%;
+    margin: auto;
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }
 
 .mat-paginator{
     width: 100%;
     margin: auto;
 }
+<<<<<<< HEAD
 
 .mat-header-cell {
     font-size: 20px;
@@ -71,4 +105,61 @@ table {
 .table-scroll {
     max-height: 500px;
     overflow-y: scroll;
+=======
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.titulo h1{
+    font-weight: bold;
+    color:#00D0D0;
+    font-size: 50px;
+}
+
+
+.cuadro{
+    width: 100%;
+    text-align: right;
+}
+
+
+p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.a{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+.cajagris{
+    padding: 2%;
+    width: 90%;
+    height: auto;
+    background-color: grey;
+}
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+table {
+    width: 100%;
+    margin: auto;
+}
+
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }

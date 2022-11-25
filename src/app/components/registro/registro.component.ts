@@ -45,6 +45,7 @@ export class RegistroComponent implements OnInit {
         usuario : this.myForm.get('usuario')!.value,
         contrasenia : this.myForm.get('contrasenia')!.value
       }
+<<<<<<< HEAD
 
       this.usuarioService.addUsuario(listaUsuarios).subscribe({
         next:(data)=>{
@@ -56,6 +57,14 @@ export class RegistroComponent implements OnInit {
           }
           else if (this.myForm.get('tipo_usuario')!.value=='Empresa') 
           {this.router.navigate(['/condicionesEmpresa', usuario])} 
+=======
+  
+      this.usuarioService.addUsuario(listaUsuarios).subscribe({
+        next:(data)=>{
+          this.snackBar.open('registrado correctamente', '',{duration: 2000});
+          if(this.myForm.get('tipo_usuario')!.value=='Cliente'){this.router.navigate(['/Condicionesbasic'])}
+          else if (this.myForm.get('tipo_usuario')!.value=='Empresa') {this.router.navigate(['/condicionesEmpresa'])} 
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
         },
         error: (err)=>{console.log(err)}
       })

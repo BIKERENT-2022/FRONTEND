@@ -1,17 +1,61 @@
+<<<<<<< HEAD
+=======
 .title {    
     font-size: 30px;
     font-weight:bold;
     margin-top: 1%;
-    margin-left: 1%;
 }
 
 .a{
-    /*margin-top: 1%;*/
+    margin-top: 1%;
     display: flex;
     justify-content: center;
 
 }
 .cajagris{
+    margin-top: 3%;
+    width: 90%;
+    padding: 2%;
+    height: auto;
+    background-color: grey;
+}
+
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+table {
+    width: 100%;
+    margin: auto;
+}
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+}
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
+.title {    
+    font-size: 30px;
+    font-weight:bold;
+    margin-top: 1%;
+<<<<<<< HEAD
+    margin-left: 1%;
+}
+
+.a{
+    /*margin-top: 1%;*/
+=======
+}
+
+.a{
+    margin-top: 1%;
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
+    display: flex;
+    justify-content: center;
+
+}
+.cajagris{
+<<<<<<< HEAD
     margin-top: 1%;
     width: 90%;
     padding: 2%;
@@ -57,3 +101,25 @@ table {
 }
 
 
+=======
+    margin-top: 3%;
+    width: 90%;
+    padding: 2%;
+    height: auto;
+    background-color: grey;
+}
+
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+table {
+    width: 100%;
+    margin: auto;
+}
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+}
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b

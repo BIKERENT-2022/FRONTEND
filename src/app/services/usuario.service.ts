@@ -28,4 +28,5 @@ export class UsuarioService {
   updateUsuario(id: any, usuario: Usuario){
     return this.http.put<Usuario>(`${this.resourcePath}/api/usuarios/${id}`, usuario);
   }
+  //getlistUsuario(){return this.http.get<Usuario[]>(this.resourcePath);}
 }

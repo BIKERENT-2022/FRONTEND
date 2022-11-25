@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .TitleProfile{
     margin-top: 40px;
     margin-bottom: 20px;
@@ -50,4 +51,63 @@ i {
 }
 button {
     margin-right: 10px;
+=======
+.TitleProfile{
+    position: absolute;
+    margin-top: 80px;
+    margin-left: -350px;
+    left: 50%;
+    font-weight: bold;
+    
+}
+.cardprofile{
+	position: absolute;
+	width: 700px;
+	height: 530px;
+    top: 50%;
+    left: 50%;       
+    margin-top: -200px;
+    margin-left: -350px;          
+}
+.datos 
+{
+    padding: 5%;
+	width:50%;
+	height: 500px;
+	float:left;       
+}
+.datos p {
+	text-align: center;
+    font-weight: bold;
+}
+
+.imgperfil{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+	object-fit: cover; /*ajusta calidad img sgn tamaño*/
+	display:block;
+	margin:auto;
+}
+input {
+    border-radius: 0.2rem;
+}
+.datos a {    
+    text-decoration: none;
+	color: black;
+}
+i {
+    padding-left: 6px;
+}
+.bi-pencil-square {
+	color: #00D0D0;
+	font-size: 23px;
+}
+.bi-x-square {
+	color: #00D0D0;
+	font-size: 21px;
+}
+button {
+    margin-right: 10px;
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }

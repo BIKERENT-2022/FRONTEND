@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { Router, ActivatedRoute } from '@angular/router';
+=======
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
@@ -16,6 +19,7 @@ export class BicicletasComponent implements OnInit {
   dataSource = new MatTableDataSource<Bicicleta>();
   displayColumns: string[] = ["img"];
   public MyForm!: FormGroup
+<<<<<<< HEAD
   idCliente!: any;
 
   constructor(private bicicletaService:BicicletaService,
@@ -25,6 +29,14 @@ export class BicicletasComponent implements OnInit {
   ngOnInit(): void {
     this.getBicicletas();
     this.idCliente = this.route.snapshot.params['idCliente'];
+=======
+
+
+  constructor(private bicicletaService:BicicletaService) { }
+
+  ngOnInit(): void {
+    this.getBicicletas();
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
   }
 
   getBicicletas(): void {
@@ -39,7 +51,6 @@ export class BicicletasComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
   bicicletaEscogida(id: any){
     this.router.navigate(["/minibmxx",this.idCliente,id]);
   }

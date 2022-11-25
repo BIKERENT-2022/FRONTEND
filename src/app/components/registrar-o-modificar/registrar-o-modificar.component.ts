@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { Router, ActivatedRoute } from '@angular/router';
+=======
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 import { BicicletaService } from './../../services/bicicleta.service';
 import { Bicicleta } from './../../models/Bicicleta';
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +17,7 @@ export class RegistrarOModificarComponent implements OnInit {
   bicicleta!: Bicicleta[];
   dataSource = new MatTableDataSource<Bicicleta>();
   displayColumns: string[] = ["img"];
+<<<<<<< HEAD
   idEmpresa!: any;
 
   constructor(private bicicletaService:BicicletaService,
@@ -23,12 +27,23 @@ export class RegistrarOModificarComponent implements OnInit {
   ngOnInit(): void {
     this.getBicicletas();
     this.idEmpresa = this.route.snapshot.params['idEmpresa'];
+=======
+
+  constructor(private bicicletaService:BicicletaService) { }
+
+  ngOnInit(): void {
+    this.getBicicletas();
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
   }
 
   getBicicletas(): void {
     this.bicicletaService.getBicicletas().subscribe(
       (data: Bicicleta[]) => {
+<<<<<<< HEAD
         this.dataSource = new MatTableDataSource(data);        
+=======
+        this.dataSource = new MatTableDataSource(data);
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
       }
     );
   }
@@ -37,6 +52,7 @@ export class RegistrarOModificarComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+<<<<<<< HEAD
 
   bicicletaEscogida(id: any){
     this.router.navigate(["/minibmx-empresa",this.idEmpresa,id]);
@@ -66,4 +82,6 @@ export class RegistrarOModificarComponent implements OnInit {
     );
   }
   
+=======
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
 }

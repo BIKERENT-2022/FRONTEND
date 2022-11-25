@@ -38,6 +38,7 @@ export class CambiarContrasenaComponent implements OnInit {
     })
   }
   
+<<<<<<< HEAD
   
   gettttID(): void{
 
@@ -79,6 +80,20 @@ export class CambiarContrasenaComponent implements OnInit {
     }
     
   }
+=======
+  /*
+  UpdatePassword()
+  {
+    const listaClientes: Cliente={
+      
+      id : 0,
+      Cuenta : this.myForm.get('Cuenta')!.value,
+      NombreUsuario : this.myForm.get('NombreUsuario')!.value,
+      CorreoElectronico : this.myForm.get('email')!.value,
+      contrasenia : this.myForm.get('conpwd')!.value
+    }
+  }*/
+>>>>>>> c8f55a2cd04139223e6a605b7995d0d9a641d53b
   
 
 
