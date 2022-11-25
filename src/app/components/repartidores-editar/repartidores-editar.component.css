@@ -39,7 +39,6 @@
     padding: 2%;
     width: 90%;
     height: auto;
-    background-color: grey;
 }
 
 .example-full-width{
@@ -64,4 +63,8 @@
     padding-top:10px;
     font-size:15px;
     margin-bottom: 17px;
+}
+
+.mat-form-field {
+    min-width: 300px;
 }

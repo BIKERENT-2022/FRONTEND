@@ -1,3 +1,4 @@
+import { Usuario } from './../models/Usuario';
 import { environment } from './../../environments/environment';
 import { Cliente } from './../models/Cliente';
 import { HttpClient } from '@angular/common/http';
@@ -16,8 +17,20 @@ export class ClienteService {
     return this.http.get<Cliente[]>(`${this.basePath}/api/clientes`);
   }
 
-  /*
-  addCliente(listaClientes: Cliente){
-    return this.http.post<Cliente>(this.basePath, listaClientes);
-  }*/
+  getID(usuario: any){
+    return this.http.get<Cliente>(`${this.basePath}/api/clientes/usuario${usuario}`);
+  }
+  
+  updateCliente(usuario: any, cliente: Cliente){
+    return this.http.put<Cliente>(`${this.basePath}/api/clientes/${usuario}`, cliente);
+  }
+
+  exportCliente() {
+    return this.http.get("http://localhost:8080/api/clientes/export/excel", {responseType: "blob"});
+  }
+
+
+  getOneCliente(id: any) {
+    return this.http.get<Cliente>(`${this.basePath}/api/clientes/${id}`);
+  }
 }

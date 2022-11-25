@@ -47,12 +47,16 @@ export class LoginComponent implements OnInit {
 
     for(const element of this.usuarios){
       if(element.contrasenia == contra  && element.usuario == usu && element.tipo_usuario=="Cliente"){
-        this.router.navigate(['/home']);
+        
+        this.router.navigate(['/home',element.id]);
         break;
+
       }
       else if(element.contrasenia == contra  && element.usuario == usu && element.tipo_usuario=="Empresa") {
-        this.router.navigate(['/Homee']);
+        
+        this.router.navigate(['/Homee',element.id]);
         break;
+        
       }
       position++
     }

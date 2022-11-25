@@ -39,7 +39,6 @@
     padding: 2%;
     width: 90%;
     height: auto;
-    background-color: grey;
 }
 
 .example-full-width{
@@ -56,4 +55,8 @@
 .mat-raised-button{
     margin-left: 1%;
     margin-right: 1%;
+}
+
+.mat-form-field {
+    min-width: 300px;
 }

@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CondicionesEmpresaComponent implements OnInit {
 
-  constructor() { }
+  usuario!: string;
+
+  constructor(
+    private router: Router,
+    private activatedRouter: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
   }
 
+  link(){
+    let usuario = this.activatedRouter.snapshot.params['usuario'];
+    this.router.navigate(['/pagoPlan', usuario])
+  }
 }
